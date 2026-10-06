@@ -1,0 +1,356 @@
+!DOCTYPE html>
+<htm<l lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda Escolar</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6c5ce7, #00b894);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        nav {
+            background: #222;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #00b894;
+        }
+
+        .contenedor {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        section {
+            margin-bottom: 45px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #6c5ce7;
+        }
+
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .producto {
+            background: white;
+            border-radius: 18px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .producto:hover {
+            transform: translateY(-7px);
+        }
+
+        .producto img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .producto h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .producto p {
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .precio {
+            display: block;
+            color: #00a884;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        button {
+            border: none;
+            background: #6c5ce7;
+            color: white;
+            padding: 11px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #4834d4;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        #mensaje {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #00b894;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            display: none;
+        }
+
+        @media (max-width: 700px) {
+            .productos {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📚 Mi Tienda Escolar ✏️</h1>
+    <p>Todo lo que necesitas para estudiar y crear</p>
+</header>
+
+<nav>
+    <a href="#libreria">📚 Librería</a>
+    <a href="#tijeras">✂️ Tijeras</a>
+    <a href="#lapiceros">🖊️ Lapiceros</a>
+    <a href="#crayones">🖍️ Crayones</a>
+    <a href="#hojas">📄 Hojas</a>
+</nav>
+
+<div class="contenedor">
+
+    <!-- LIBRERÍA -->
+    <section id="libreria">
+        <h2>📚 Librería</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+                <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=80"
+                     alt="Cuaderno">
+                <h3>Cuaderno Escolar</h3>
+                <p>Cuaderno ideal para tus clases.</p>
+                <span class="precio">Q25.00</span>
+                <button onclick="comprar('Cuaderno Escolar')">Comprar</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80"
+                     alt="Libro">
+                <h3>Libro Educativo</h3>
+                <p>Perfecto para estudiar y aprender.</p>
+                <span class="precio">Q40.00</span>
+                <button onclick="comprar('Libro Educativo')">Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TIJERAS -->
+    <section id="tijeras">
+        <h2>✂️ Tijeras</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+                <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=800&q=80"
+                     alt="Tijeras escolares">
+                <h3>Tijeras Escolares</h3>
+                <p>Tijeras prácticas para trabajos escolares.</p>
+                <span class="precio">Q15.00</span>
+                <button onclick="comprar('Tijeras Escolares')">Comprar</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://images.unsplash.com/photo-1598301257982-0cf014dabbcd?auto=format&fit=crop&w=800&q=80"
+                     alt="Tijeras">
+                <h3>Tijeras Creativas</h3>
+                <p>Ideales para manualidades.</p>
+                <span class="precio">Q20.00</span>
+                <button onclick="comprar('Tijeras Creativas')">Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LAPICEROS -->
+    <section id="lapiceros">
+        <h2>🖊️ Lapiceros</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+                <img src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=800&q=80"
+                     alt="Lapicero azul">
+                <h3>Lapicero Azul</h3>
+                <p>Escritura suave y cómoda.</p>
+                <span class="precio">Q5.00</span>
+                <button onclick="comprar('Lapicero Azul')">Comprar</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?auto=format&fit=crop&w=800&q=80"
+                     alt="Lapiceros de colores">
+                <h3>Lapiceros de Colores</h3>
+                <p>Set de lapiceros para tus trabajos.</p>
+                <span class="precio">Q18.00</span>
+                <button onclick="comprar('Lapiceros de Colores')">Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CRAYONES -->
+    <section id="crayones">
+        <h2>🖍️ Crayones</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=800&q=80"
+                     alt="Crayones">
+                <h3>Crayones Básicos</h3>
+                <p>Colores para dibujar y pintar.</p>
+                <span class="precio">Q12.00</span>
+                <button onclick="comprar('Crayones Básicos')">Comprar</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?auto=format&fit=crop&w=800&q=80"
+                     alt="Crayones de colores">
+                <h3>Crayones Premium</h3>
+                <p>Colores intensos para tus dibujos.</p>
+                <span class="precio">Q25.00</span>
+                <button onclick="comprar('Crayones Premium')">Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HOJAS -->
+    <section id="hojas">
+        <h2>📄 Hojas</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+                <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80"
+                     alt="Hojas blancas">
+                <h3>Hojas Blancas</h3>
+                <p>Paquete de hojas para tareas e impresiones.</p>
+                <span class="precio">Q35.00</span>
+                <button onclick="comprar('Hojas Blancas')">Comprar</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
+                     alt="Hojas de colores">
+                <h3>Hojas de Colores</h3>
+                <p>Perfectas para carteles y manualidades.</p>
+                <span class="precio">Q20.00</span>
+                <button onclick="comprar('Hojas de Colores')">Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<div id="mensaje"></div>
+
+<footer>
+    <p>© 2026 Mi Tienda Escolar | Calidad, creatividad y educación 📚</p>
+</footer>
+
+<script>
+    function comprar(producto) {
+        const mensaje = document.getElementById("mensaje");
+
+        mensaje.innerHTML = "✅ Agregaste <strong>" + producto + "</strong> a tu compra.";
+        mensaje.style.display = "block";
+
+        setTimeout(function() {
+            mensaje.style.display = "none";
+        }, 2500);
+    }
+</script>
+
+</body>
+</html>
+Incluye: menú de navegación, 5 secciones, 10 productos, imágenes, precios, botones de compra, efectos al pasar el mouse y diseño adaptable para celular. 
+
+
+
+
+
+
+
+
+
+
+
+
